@@ -1,3 +1,13 @@
+$(window).scroll(function() {
+	var scrollPos =$(window).scrollTop();
+	if (scrollPos > 100) {
+		$(".inv-phone-holder").fadeIn(250);
+	} else {
+		$(".inv-phone-holder").fadeOut(250);
+	}
+});
+
+
 $(document).ready(function() {
 	
 	$('.owl-carousel').owlCarousel({
@@ -10,6 +20,24 @@ $(document).ready(function() {
 		navText: false,
 		slideBy: 3
 	});
+	
+	
+	$('.map-button').click(function() {
+		$('.hidden-popup').not($(this).find('.hidden-popup')).fadeOut(250)
+		$(this).parent().find('.hidden-popup').fadeToggle(250)
+	});
+	$("body").on("click",function(e) {
+		if (!$(e.target).hasClass("scheme-item") && !$(e.target).hasClass("rounded-background") && 			!$(e.target).parents().hasClass("scheme-item") && !$(e.target).parents().hasClass("rounded-background")) {
+			$(".hidden-popup").fadeOut(250)
+		}
+		else if ($(e.target).hasClass("popup-close-button")) {
+			$(".hidden-popup").fadeOut(250)
+		}
+	});
+	
+	$(".order-item-button").click(function() {
+		$("#item-id").html($(".model-name a").html());
+	})
 	
 
 	// Формы
@@ -49,6 +77,16 @@ $(document).ready(function() {
 		
 	});
 	
+	$(".services-button").click(function() {
+		$(".services-option").fadeToggle(250)
+	});
+	$("body").on("click",function(e) {
+		if (!$(e.target).hasClass("services-option") && !$(e.target).hasClass("services-button") && !$(e.target).parents().hasClass("services-option") && !$(e.target).parents().hasClass("services-button")) {
+			$(".services-option").fadeOut(250)
+		}
+		console.log(e.target)
+	})
+	
 	$("body").on("click",".placeholder",function(e) {
 		if ($(this).parent().find("input").length) {
 			$(this).parent().find("input").trigger("focus");
@@ -62,7 +100,7 @@ $(document).ready(function() {
 		$(this).find('.hidden-description').slideToggle("slow");
 		$(this).find('.floating-answer').toggleClass("visible");;
 	});
-
+	
 	if ($(".carousel").length) {
 		
 		$(".carousel").each(function() {
@@ -78,12 +116,11 @@ $(document).ready(function() {
 				carObject.prev('.calculative').find('.shifting-numeral').html(''+currentIndex+'/'+totalItems+'');
 			});
 			
-		})
-	
-		
-		
+		});	
 	}
-
+	
 });
+
+
 
 

@@ -105,10 +105,73 @@ input[type=text] {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2d32', endColorstr='#232325',GradientType=0 );
 	height: 54px;
 	position: fixed;
-	width: 100%;
 	z-index: 100;
+	top: 0;
+	width: 100%;
 }
 
+
+.inv-phone {
+	color: #ffffff;
+	font-size: 16px;
+	font-family: roboto;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 54px;
+}
+
+.menu-list-name.fs {
+	padding-right: 0px;
+}
+
+.left-menu-holder.services-option {
+	border: none;
+	position: absolute;
+	z-index: 40;
+	display: none;
+}
+
+.sharp-angle {
+	width: 15px;
+	height: 15px;
+	border-top: 3px solid rgb(6, 175, 235);
+	background-color: #FFF;
+	margin-top: -13px;
+	transform: rotate(-45deg);
+	text-align: center;
+	border-right: 3px solid #06AFEB;
+	position: absolute;
+	top: 4px;
+	left: 104px;
+}
+
+.services {
+	border: 3px solid #06afeb;
+	box-shadow: 2px 4px 40px 0.00px rgba(73, 70, 91, 0.72);
+	position: relative;
+	background-color: #ffffff;
+}
+
+.inv-phone-holder {
+	float: left;
+	position: relative;
+	margin-left: 85px;
+	display: none;
+}
+.left-menu.services li {
+	border-bottom :none;
+}
+
+.inv-phone-holder:before {
+	content: "";
+	position: absolute;
+	width: 17px;
+	height: 20px;
+	z-index: 10;
+	background: url(images/phone-black.png) center no-repeat;
+	top: 17px;
+	left: -20px;
+}
 
 .upper-menu li {
 	list-style: none;
@@ -320,15 +383,15 @@ div.order-item-button:hover {
 
 }
 
-.services-button span:after {
+.services-button span:before {
 	content: "";
 	position: absolute;
 	z-index: 10;
 	width: 15px;
 	height: 10px;
 	background: url(images/arrow-down-sign-to-navigate.png) left no-repeat;
-	margin-top: 17px;
-  margin-left: 26px;
+	right: -40px;
+	top: 6px;
 } 
 
 .introduction {
@@ -652,11 +715,129 @@ input[type="submit"]{
 /*MAP STARTS HERE*/
 .map {
 	background:url(images/map.jpg);
-	height: 420px;
+	height: 436px;
 	position: relative;
 	margin-top: 20px;
 	background-position: 17px 13px;
 }
+
+.hidden-popup {
+	width: 329px;
+	background-color: #ffffff;
+	z-index: 90;
+	border: 3px solid #59C607;
+	font-size: 13px;
+	font-weight: 400;
+	font-family: Arial;
+	color: #36363f;
+	position: relative;
+	box-shadow: 2px 4px 40px 0.00px rgba(73, 70, 91, 0.72);
+	display: none;
+}
+
+
+.popup-close-button {
+	background: url(images/popup-close.png) center no-repeat;
+	width: 13px;
+	height: 13px;
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 20px;
+}
+
+
+/*
+.hidden-popup:before {
+	content: "";
+	width: 31px;
+	height: 19px;
+	background: url(images/sharp-bottom.png) center no-repeat;
+	position: absolute;
+	z-index: 15;
+	top: 149px;
+  left: 141px;
+}
+*/
+
+.green-angle {
+	width: 20px;
+	height: 20px;
+	border-right: 3px solid #59C607;;
+	background: #ffffff none repeat scroll 0% 0%;
+	transform: rotate(45deg);
+	margin-bottom: -12px;
+	margin-left: 144px;
+	border-bottom: 3px solid #59C607;;
+}
+
+.popup-wrapper.item-1-position {
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 15px;
+	left: -110px;
+}
+
+.item-2-position {
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 15px;
+	left: -113px;
+}
+
+.item-3-position {
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 15px;
+  left: -129px;
+}
+
+.item-4-position {
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 15px;
+  left: -107px;
+}
+
+.item-5-position {
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 15px;
+	left: -113px;
+}
+
+.item-6-position {
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 15px;
+	left: -113px;
+}
+
+.item-7-position {
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 15px;
+	left: -113px;
+}
+
+.item-8-position {
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 15px;
+  left: -131px;
+}
+
+.popup-description { 
+	padding: 30px;
+	text-align: left;
+}
+
+.popup-corner {
+	width: 43px;
+	height: 43px;
+	border: 3px solid #59C607;
+}
+
 
 h2 {
 	font-family: roboto;
@@ -872,18 +1053,22 @@ h2 {
 	margin-top: 46px;
 	background-color: #83cc52;
 	position: relative;
+	transition: background-position 0.7s ease;
+  background-image: url(images/hover-for-button-1.jpg);
+  background-position: 271px 0;
+  background-repeat: no-repeat;
 }
 
 .map-right-button.green:hover {
-	background: url(images/hover-for-button-1.jpg) 0 0 no-repeat;
+background-position: 0 0;
 }
 
 .map-right-button.blue:hover {
-	background: url(images/hover-for-button-2.jpg) 0 0 no-repeat;
+	background-position: 0 0;
 }
 
 .map-right-button.pink:hover {
-	background: url(images/hover-for-button-3.jpg) 0 0 no-repeat;
+	background-position: 0 0;
 }
 
 .map-right-button.green:before {
@@ -922,11 +1107,19 @@ h2 {
 .map-right-button.blue {
 	background-color: #1197e4;
 	position: relative;
+	transition: background-position 0.7s ease;
+  background-image: url(images/hover-for-button-2.jpg);
+  background-position: 271px 0;
+  background-repeat: no-repeat;
 }
 
 .map-right-button.pink {
 	background-color: #7980a1;
 	position: relative;
+	transition: background-position 0.7s ease;
+  background-image: url(images/hover-for-button-2.jpg);
+  background-position: 271px 0;
+  background-repeat: no-repeat;
 }
 
 .text-holder {
@@ -1742,6 +1935,13 @@ h5 {
 		color: #28282c;
 }
 
+.services li a {
+	padding:12px 14px 12px 25px;
+}
+
+.left-menu.services a:hover {
+	padding: 13px 14px 13px 25px;
+}
 
 .left-menu a:hover {
 	background-color: #f1f1f1;
@@ -2183,7 +2383,7 @@ background: none;
 
 .articles-list .description-holder {
 	padding-left: 10px;
-	padding-bottom: 2px;
+	padding-bottom: 8px;
 }
 
 .articles-list .description-holder span:hover {
@@ -2372,6 +2572,32 @@ div.modern-page-navigation a {
 	line-height: 26px;
 	border-radius: 3px;
 }
+
+.rub {
+	color: #28282C;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+	display: inline-block;
+	line-height: 7px; 
+	border-bottom: 1px solid #28282C; 
+	width:0.4em;
+	text-transform: uppercase;
+}
+
+.rub-small {
+	font-size: 14px;
+  color: #28282c;
+  font-style: normal;
+  font-family: roboto;
+  font-weight: 600;
+	display: inline-block;
+	line-height: 4px; 
+	border-bottom: 1px solid #28282c; 
+	width:0.4em;
+	text-transform: uppercase;
+}
+
 
 .filter-navigation.active:hover {
 	color: #ffffff;
@@ -2598,6 +2824,74 @@ a:focus {
 
 .inner-item-picture-holder {
 	float: left;
+}
+
+.available-item {
+	font-weight: normal;
+	font-size: 12px;
+	font-family: roboto;
+	color: #59c607;
+	font-style: normal;
+	position: relative;
+	padding-left: 80px;
+	padding-bottom: 10px;
+}
+
+.available-item:before {
+	content: "";
+	width: 17px;
+	height: 17px;
+	background: url(images/marked.png) center no-repeat;
+	position: absolute;
+	z-index: 15;
+	left: 51px;
+}
+
+.item-info-holder {
+	margin-top: 20px;
+}
+
+.notavailable-item:before {
+	content: "";
+	width: 17px;
+	height: 17px;
+	background:url(images/not-available.png) center no-repeat;
+	position: absolute;
+	z-index: 15;
+	left: 51px;
+}
+
+.order-item:before {
+	content: "";
+	width: 17px;
+	height: 17px;
+	background:url(images/order.png) center no-repeat;
+	position: absolute;
+	z-index: 15;
+	left: 51px;
+}
+
+
+.notavailable-item {
+	font-weight: normal;
+	font-size: 12px;
+	font-family: roboto;
+	font-style: normal;
+	color:#d87878;
+	position: relative;
+	padding-left: 80px;
+	padding-bottom: 10px;
+}
+
+.order-item {
+	font-weight: normal;
+	font-size: 12px;
+	font-family: roboto;
+	color: #5eaadb;
+	font-style: normal;
+	position: relative;
+	padding-left: 80px;
+	padding-bottom: 10px;
 }
 
 .inner-item-price-description-holder {
@@ -3032,7 +3326,7 @@ div.clients-name {
 }
 
 .modified .menu-list-name {
-	 width: 240px;
+	 width: 201px;
 }
 
 	
@@ -3066,7 +3360,18 @@ div.clients-name {
 	font-size: 36px;
 	border: none;
 	padding: 0px 0px 7px 0px;
-	
+}
+
+.sub-description {
+	font-weight: normal;
+	font-size: 14px;
+	font-family: roboto;
+	font-style: normal;
+	color: #888888;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .modal-header h4 {
@@ -3137,7 +3442,10 @@ div.clients-name {
 	font-style: normal;
 	border: none;
 	background:none;
-	
+}
+
+.cancel:focus {
+	outline: none;
 }
 
 textarea+button.cancel:hover {
@@ -3514,6 +3822,7 @@ a.projects-learn-more {
 	position: absolute;
 	z-index: 10;
 	right: -40px;
+	top: -2px;
 }
 
 .article-left-image-holder {
