@@ -3987,11 +3987,23 @@ a.projects-learn-more {
 }
 
 .catalog-text-part-holder {
-	margin-top: 34px;
+	margin-top: 60px;
 	margin-bottom: 40px;
 	clear: both;
 	margin-left: 15px;
 	margin-right: 15px;
+	position: relative;
+}
+
+.catalog-text-part-holder:before {
+	content: "";
+	background: url(images/half-line.png) 0 0 no-repeat;
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	height: 42px;
+	left: 0;
+	top: -43px;
 }
 
 .catalog-header {
